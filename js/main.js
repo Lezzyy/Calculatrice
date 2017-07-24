@@ -1,14 +1,8 @@
 //VARIABLES
 var number = document.getElementsByClassName('button');
-var multi = document.getElementsByClassName('multi');
-var add = document.getElementsByClassName('add');
-var minus = document.getElementsByClassName('minus');
-var dot = document.getElementsByClassName('dot');
-var suppr = document.getElementsByClassName('suppr');
+var sign = document.getElementsByClassName('buttonFirst');
 var result = document.getElementById('result');
 var calcul = [];
-
-
 
 
 function val(number) {
@@ -23,5 +17,16 @@ function val(number) {
   }
 }
 
-
 val(number);
+
+function valeur(sign) {
+  for (let i = 0; i < sign.length; i++) {
+    sign[i].onclick = function() {
+      calcul.push(sign[i].innerHTML);
+      console.log(calcul);
+      result.innerHTML = calcul.join("");
+    }
+  }
+}
+
+valeur(sign);
