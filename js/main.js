@@ -12,7 +12,6 @@ function val(number) {
       var numbers = parseFloat(number[i].innerHTML);
       calcul.push(numbers);
       result.innerHTML = calcul.join("");
-      console.log(calcul);
     }
   }
 }
@@ -23,10 +22,17 @@ function valeur(sign) {
   for (let i = 0; i < sign.length; i++) {
     sign[i].onclick = function() {
       calcul.push(sign[i].innerHTML);
-      console.log(calcul);
       result.innerHTML = calcul.join("");
     }
   }
 }
-
 valeur(sign);
+
+function suppr(){
+  sign[4].onclick = function(){
+  result.innerHTML="";
+  calcul=[];
+    console.log(sign[4]);
+  }
+}
+suppr();
